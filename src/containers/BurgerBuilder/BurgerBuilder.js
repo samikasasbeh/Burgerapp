@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {connect} from 'react-redux'
 import Aux from '../../hoc/Auxiliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from './../../components/BuildController/BuildControls';
@@ -31,12 +31,12 @@ class BurgerBuilder extends Component {
     }
     componentDidMount(){
         console.log(this.props);
-        axios.get(`https://react-my-burger-591cb-default-rtdb.firebaseio.com/ingredients.json`).then(response=>{
+        /*axios.get(`https://react-my-burger-591cb-default-rtdb.firebaseio.com/ingredients.json`).then(response=>{
             this.setState({ingredients: response.data})
             
         }).catch(error=>{
             this.setState({error: true})
-        });
+        });*/
     }
     purchaseCancelHandler = () => {
         this.setState({purchasing: false});
@@ -143,6 +143,17 @@ class BurgerBuilder extends Component {
                 {burger}
             </Aux>
         );
+    }
+}
+mapStateToProps = state =>{
+    return{
+
+    }
+}
+
+mapActionToProps = state =>{
+    return{
+        
     }
 }
 
